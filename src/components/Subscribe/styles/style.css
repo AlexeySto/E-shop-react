@@ -1,0 +1,160 @@
+.subscribe_background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 50%;
+  height: auto;
+}
+.subscribe_background__image {
+  max-width: 1600px;
+  height: auto;
+  position: absolute;
+  left: 30%;
+  transform: translateX(-30%);
+}
+
+.subscribe_box {
+  width: 100vw;
+  max-width: 1600px;
+  height: 448px;
+  display: flex;
+}
+
+.subscribes {
+  position: absolute;
+  width: 100vw;
+  max-width: 1600px;
+  height: 448px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+.subscribes__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subscribes__image {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+.subscribes__image_content {
+  width: 150px;
+  height: 130px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.subscribes__text {
+  width: 360px;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subscribe__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.subscribe__text {
+  height: 44px;
+  font-size: 18px;
+}
+.subscribe__input {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.subscribe__input_div {
+  width: 250px;
+  height: 50px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  display: flex;
+  padding-left: 30px;
+  background: rgb(225, 225, 225);
+}
+.subscribe__field {
+  width: auto;
+  border: none;
+  margin: 2px;
+  outline: none;
+  background: rgb(225, 225, 225);
+}
+.subscribe__button {
+  width: 100px;
+  height: 50px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F16D7F;
+  color: white;
+  transition: all 0.3s;
+}
+.subscribe__button:hover {
+  box-shadow: 0 0 5px #5D5D5D;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .subscribe_box {
+    height: 693px;
+  }
+  .subscribe_background {
+    width: 100vw;
+    height: 693px;
+  }
+  .subscribe_background__image {
+    max-width: 2800px;
+    left: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .subscribes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 54px;
+    gap: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .subscribe_box {
+    height: 550px;
+  }
+  .subscribe_background {
+    width: 100vw;
+    height: 550px;
+  }
+  .subscribe_background__image {
+    max-width: 2000px;
+    left: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .subscribes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 54px;
+    gap: 59px;
+  }
+  .subscribes__text {
+    padding-bottom: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

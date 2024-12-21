@@ -1,0 +1,309 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.cart_box {
+    width: 95vw;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 4vw;
+
+    &__left {
+        @include columnCenter;
+    }
+
+    &__right {
+        padding-top: 113px;
+        @include column;
+        gap: 57px;
+    }
+}
+
+.card_box {
+    @include columnCenter;
+    gap: 40px;
+    padding-top: 96px;
+}
+
+.card {
+    max-width: 652px;
+    @include row;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 17px 19px 24px 0px $colorBorder;
+
+    &__img {
+        width: 262px;
+        height: 306px;
+    }
+
+    &__info {
+        width: 300px;
+        @include column;
+        gap: 42px;
+    }
+
+    &__title {
+        width: 200px;
+        padding-top: 22px;
+        padding-left: 31px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    &__specifications {
+        width: 200px;
+        @include column;
+        gap: 6px;
+        padding-left: 31px;
+    }
+
+    &__text {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26px;
+
+        &_select {
+            color: $colorSite;
+        }
+
+        &_quantity {
+            @include row;
+            gap: 32px;
+        }
+    }
+
+    &__input {
+        width: 44px;
+        height: 25px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    &__close {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        margin-top: 28px;
+        margin-right: 22px;
+        transition: all 0.3s;
+
+        &:hover path {
+            fill: $colorSite;
+        }
+    }
+}
+
+.cart_buttons {
+    max-width: 652px;
+    width: 90%;
+    @include rowCenter;
+    justify-content: space-between;
+    padding-top: 72px;
+    padding-bottom: 128px;
+
+    &__button {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 17px;
+        color: $dark;
+        padding: 17px 40px;
+        background-color: white;
+        border: 1px solid $gray;
+        transition: all 0.3s;
+
+        &:hover {
+            border: 1px solid $colorSiteSecond;
+            color: $colorSite;
+        }
+    }
+}
+
+.form {
+    width: 360px;
+    @include column;
+    gap: 20px;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+    }
+
+    &__input {
+        height: 45px;
+        padding-left: 17px;
+        outline: none;
+
+        &::placeholder {
+            color: $colorBorder;
+        }
+    }
+
+    &__button {
+        @extend .cart_buttons__button !optional;
+        width: 100px;
+        padding: 10px 0px 12px 0px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+
+.total {
+    width: 360px;
+    height: 214px;
+    @include column;
+    align-items: end;
+    background-color: $colorSiteCatalog;
+
+    &__line {
+        padding-right: 42px;
+    }
+
+    &__button {
+        @extend .button !optional;
+        width: 273px;
+        height: 50px;
+        @include rowCenter;
+        justify-content: center;
+        margin-top: 17px;
+        margin-right: 43px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+    }
+}
+
+.sub {
+    @include row;
+    gap: 20px;
+    padding-top: 39px;
+    padding-right: 34px;
+    padding-bottom: 12px;
+
+    &__text {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 13px;
+    }
+}
+
+.grand {
+    @include row;
+    gap: 30px;
+    padding-right: 37px;
+    padding-bottom: 31px;
+
+    &__text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+
+        &:last-child {
+            color: $colorSite;
+        }
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+
+    .cart_box {
+        @include columnCenter;
+        gap: 64px;
+        padding-bottom: 128px;
+
+        &__right {
+            width: 95vw;
+            @include rowCenter;
+            justify-content: center;
+            padding-top: 0;
+        }
+    }
+
+    .cart_buttons {
+        padding-bottom: 0;
+    }
+
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .cart_box {
+        @include columnCenter;
+        gap: 32px;
+        padding-bottom: 96px;
+
+        &__right {
+            width: 100vw;
+            @include columnCenter;
+            justify-content: center;
+            padding-top: 0;
+        }
+    }
+
+    .card_box {
+        padding-top: 39px;
+    }
+
+    .card {
+        &__img {
+            width: 144px;
+            height: 188px;
+        }
+
+        &__info {
+            width: auto;
+            gap: 26px;
+        }
+
+        &__title {
+            width: 135px;
+            padding-top: 14px;
+            padding-left: 17px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        &__specifications {
+            width: 120px;
+            padding-left: 17px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &__input {
+            width: 24px;
+            height: 15px;
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        &__close {
+            width: 10px;
+            height: 10px;
+            margin-top: 17px;
+            margin-left: 31px;
+            margin-right: 12px;
+        }
+    }
+
+    .cart_buttons {
+        justify-content: space-evenly;
+        padding-bottom: 0;
+        width: 95vw;
+        padding-top: 30px;
+
+        &__button {
+            font-size: 12px;
+            line-height: 14px;
+            padding: 9px 18px;
+        }
+    }
+}

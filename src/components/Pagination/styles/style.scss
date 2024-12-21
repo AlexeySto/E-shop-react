@@ -1,0 +1,22 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.pagination {
+    width: 285px;
+    height: 44px;
+    @include rowCenter;
+    justify-content: space-around;
+    margin-top: 48px;
+    margin-bottom: 96px;
+
+    &__text {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+        color: $colorBorder;
+    }
+}
+
+.current {
+    color: $colorSite;
+}

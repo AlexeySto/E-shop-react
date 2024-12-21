@@ -1,0 +1,169 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.subscribe_background {
+    @include columnCenter;
+    opacity: 50%;
+    height: auto;
+
+    &__image {
+        max-width: $maxWidth;
+        height: auto;
+        position: absolute;
+        left: 30%;
+        transform: translateX(-30%);
+    }
+}
+
+.subscribe_box {
+    width: 100vw;
+    max-width: $maxWidth;
+    height: 448px;
+    display: flex;
+}
+
+.subscribes {
+    position: absolute;
+    width: 100vw;
+    max-width: $maxWidth;
+    height: 448px;
+    @include rowCenter;
+    justify-content: space-around;
+    z-index: 1;
+
+    &__info {
+        @include columnCenter;
+    }
+
+    &__image {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+
+        &_content {
+            width: 150px;
+            height: 130px;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        width: 360px;
+        font-style: italic;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+}
+
+.subscribe {
+    @include columnCenter;
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    &__text {
+        height: 44px;
+        font-size: 18px;
+    }
+
+    &__input {
+        width: 350px;
+        height: 50px;
+        @include row;
+
+        &_div {
+            width: 250px;
+            height: 50px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            display: flex;
+            padding-left: 30px;
+            background: rgb(225, 225, 225);
+        }
+    }
+
+    &__field {
+        width: auto;
+        border: none;
+        margin: 2px;
+        outline: none;
+        background: rgb(225, 225, 225);
+    }
+
+    &__button {
+        width: 100px;
+        height: 50px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $colorSite;
+        color: white;
+        transition: all 0.3s;
+    }
+
+    &__button:hover {
+        box-shadow: 0 0 5px $gray;
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablt) {
+
+    .subscribe_box {
+        height: 693px;
+    }
+
+    .subscribe_background {
+        width: 100vw;
+        height: 693px;
+
+        &__image {
+            max-width: 2800px;
+            left: 40%;
+            object-fit: contain;
+        }
+    }
+
+    .subscribes {
+        @include columnCenter;
+        padding-top: 54px;
+        gap: 48px;
+    }
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .subscribe_box {
+        height: 550px;
+    }
+
+    .subscribe_background {
+        width: 100vw;
+        height: 550px;
+
+        &__image {
+            max-width: 2000px;
+            left: 40%;
+            object-fit: contain;
+        }
+    }
+
+    .subscribes {
+        @include columnCenter;
+        justify-content: start;
+        padding-top: 54px;
+        gap: 59px;
+
+        &__text {
+            padding-bottom: 0;
+        }
+    }
+}

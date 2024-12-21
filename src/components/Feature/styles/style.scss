@@ -1,0 +1,60 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.feature {
+    width: 100vw;
+    max-width: $maxWidth;
+    background-color: $dark;
+    padding-top: 104px;
+    padding-bottom: 104px;
+    @include row;
+    justify-content: center;
+    gap: 30px;
+
+    &__img {
+        transition: all 0.5s;
+    }
+
+    &__img:hover {
+        box-shadow: 0 0 5px $colorSiteSecond;
+        background-color: $gray;
+    }
+
+    &__item {
+        width: 360px;
+        @include columnCenter;
+        gap: 24px;
+    }
+
+    &__heading {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $colorSiteSecond;
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: $colorSiteSecond;
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+
+    .feature {
+        @include columnCenter;
+    }
+
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .feature {
+        @include columnCenter;
+    }
+}

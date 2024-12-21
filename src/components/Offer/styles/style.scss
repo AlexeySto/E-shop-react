@@ -1,0 +1,79 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.offer {
+    width: 80%;
+    max-width: $maxWidthSecond;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 26px;
+    margin-top: 10%;
+    padding-bottom: 8%;
+
+    &__card {
+        max-width: 360px;
+        height: auto;
+        border: 2px solid $dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark;
+        transition: transform 1s;
+    }
+
+    &__card:last-child {
+        max-width: $maxWidthSecond;
+        grid-column: 1 / 4;
+    }
+
+    &__card:hover {
+        transform: translateY(-30px) scale(1.3);
+    }
+
+    &__img {
+        opacity: 0.3;
+    }
+
+    &__text {
+        width: auto;
+        height: auto;
+        @include columnCenter;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__word {
+        color: $colorSiteSecond;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &_category {
+            color: $colorSite;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+
+    .offer {
+        width: 95%;
+    }
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .offer {
+        @include columnCenter;
+      
+        &__card:last-child {
+          max-width: 360px;
+          height: 111px;
+          grid-column: 1;
+        }
+      }
+}

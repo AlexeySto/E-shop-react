@@ -1,0 +1,76 @@
+@import 'vars'
+@import 'mixins'
+
+* 
+    margin: 0
+    padding: 0
+    font-family: 'Lato', sans-serif
+
+body 
+    padding-left: calc(50% - #{$maxWidth / 2})
+    padding-right: calc(50% - #{$maxWidth / 2})
+
+a 
+    text-decoration: none
+
+img 
+    max-width: 100%
+
+.desktop_index 
+    @include columnCenter
+    position: relative
+    overflow: hidden                         
+
+
+    
+.products
+    width: 80%
+    max-width: $maxWidthSecond
+    @include columnCenter
+    flex-wrap: wrap
+    padding-bottom: 6%
+
+    &__title 
+        width: 100%
+        @include columnCenter
+        flex-wrap: wrap
+        justify-content: start
+        padding-bottom: 6%
+
+    &__text 
+        color: $dark
+        font-size: 30px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        
+    &__text:last-child
+        color: $gray
+        font-size: 14px
+
+.button
+    background-color: $colorSite
+    display: block
+    width: 212px
+    height: 48px
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 12px
+    color: $colorSiteSecond
+    text-align: center
+    line-height: 40px
+    transition: all 0.3s
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+
+    &:hover
+        background-color: $colorSiteSecond
+        color: $colorSite
+
+@media (min-width:768px) and (max-width:1024px)
+
+    .products
+        width: 95%
+
+
+

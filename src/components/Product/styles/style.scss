@@ -1,0 +1,135 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.product {
+    @include columnCenter;
+    position: relative;
+    justify-content: center;
+
+    &__box {
+        width: 100%;
+        max-width: $maxWidthSecond;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        gap: 30px;
+        padding-bottom: 6%;
+    }
+
+    &__view {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover &__img {
+        filter: brightness(0.5);
+    }
+
+    &:hover &__add {
+        display: flex;
+    }
+
+    &__img {
+        max-width: 360px;
+        width: 100%;
+    }
+
+    &__add {
+        position: absolute;
+        border: 1px solid $colorSiteSecond;
+        width: 139px;
+        height: 44px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        color: $colorSiteSecond;
+        transition: all 0.5s;
+    }
+
+    &__add:hover {
+        box-shadow: 0 0 5px $colorSiteSecond;
+    }
+
+    &__add:hover svg path {
+        fill: $colorSite;
+    }
+
+    &__content {
+        max-width: 360px;
+        width: 100%;
+        background: $colorSiteCatalog;
+        @include column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 24px;
+        padding-bottom: 16px;
+        gap: 16px;
+    }
+
+    &__heading {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        padding-left: 3vw;
+        color: $dark;
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        padding-left: 2.5vw;
+        padding-right: 2vw;
+        color: $gray;
+    }
+
+    &__price {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        padding-left: 3vw;
+        color: $colorSite;
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: 
+$maxWidthTablet) {
+
+    .product:last-child {
+        display: none;
+    }
+   
+
+    .product__box {
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+        padding-bottom: 129px;
+        gap: 2vw;
+    }
+
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .product:last-child {
+        display: none;
+    }
+    
+
+    .product__box {
+        @include columnCenter;
+        justify-content: center;
+        padding-bottom: 64px;
+    }
+
+}

@@ -1,0 +1,77 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.breadcrumb {
+    max-width: $maxWidth;
+    height: 148px;
+    width: 100vw;
+    @include rowCenter;
+    justify-content: space-around;
+    background-color: $colorSiteCatalog;
+
+    &__text {
+        color: $colorSite;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    &__ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    &__li:not(:last-child)::after {
+        content: '/';
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+    }
+
+    &__li:last-child .breadcrumb__link {
+        color: $colorSite;
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        color: $gray;
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+
+    .breadcrumb {
+        display: grid;
+        grid-template-columns: 2% 1fr 1fr 2%;
+        background-color: $colorSiteCatalog;
+
+        &__title {
+            grid-column: 2;
+        }
+
+        &__path {
+            display: flex;
+            justify-content: end;
+            grid-column: 3;
+        }
+    }
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .breadcrumb {
+        height: 148px;
+        @include columnCenter;
+        justify-content: start;
+        gap: 32px;
+        background-color: $colorSiteCatalog;
+
+        &__title {
+            padding-top: 24px;
+        }
+    }
+}

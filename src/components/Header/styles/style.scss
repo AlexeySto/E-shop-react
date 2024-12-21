@@ -1,0 +1,124 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+.header {
+    width: 100vw;
+    max-width: $maxWidth;
+    height: 75px;
+    background-color: $dark;
+    display: grid;
+    grid-template-columns: 18% 2fr 1fr;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 111px;
+    height: 38px;
+    grid-column: 2;
+    @include rowCenter;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+
+
+    &__img_1 {
+        width: 26px;
+        height: 27px;
+        fill: $colorSiteSecond;
+    }
+
+    &__img_2 {
+        width: 44px;
+        height: 38px;
+    }
+}
+
+.button_copy {
+    width: 159px;
+    height: 29px;
+    @include rowCenter();
+    gap: 20px;
+}
+
+#check {
+    left: -999999px;
+    visibility: hidden;
+}
+
+#check:checked~.burger_menu__menu {
+    right: 0px;
+    box-shadow: 6px 4px 35px 0px $gray;
+}
+
+.burger_menu {
+
+    &__menu {
+        position: absolute;
+        z-index: 2;
+        width: 232px;
+        top: 75px;
+        right: -232px;
+        @include column;
+        background-color: white;
+        transition: right 0.3s;
+    }
+
+    &__heading {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        color: $dark;
+        padding: 9px 34px 24px;
+    }
+
+    &__box {
+        @include column;
+        gap: 20px;
+        padding-left: 33px;
+        padding-bottom: 32px;
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $colorSite;
+    }
+
+    &__list {
+        @include column;
+        gap: 11px;
+        margin-left: 22px;
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $dark;
+    }
+}
+
+@media (min-width: $minWidthTablet) and (max-width: $maxWidthTablet) {
+
+    .header {
+        grid-template-columns: 4% 3fr 1fr;
+    }
+}
+
+@media (max-width: $maxWidthMobile) {
+
+    .header {
+        grid-template-columns: 2% 3fr 1fr 2%;
+    }
+
+    .button_copy {
+        flex-direction: row-reverse;
+        gap: 0;
+
+        &__link {
+            display: none;
+        }
+    }
+}

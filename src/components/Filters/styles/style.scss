@@ -1,0 +1,81 @@
+@import './../../../styles/vars';
+@import './../../../styles/mixins';
+
+datalist {
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+datalist:first-child {
+    grid-column: 1;
+}
+
+summary {
+    @include rowCenter;
+    gap: 10px;
+}
+
+.details__filter[open] {
+    color: $colorSite;
+
+    svg {
+        fill: $colorSite;
+    }
+}
+
+.details__filter_box {
+    color: $dark;
+}
+
+.details__filter_box[open] summary {
+    color: $colorSite;
+}
+
+.filter {
+    grid-column: 1;
+
+    &__svg {
+        fill: $dark;
+    }
+}
+
+.filter_box {
+    position: absolute;
+    z-index: 1;
+    @include column;
+    gap: 6px;
+    width: 360px;
+    background-color: white;
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    box-sizing: border-box;
+    padding: 16px;
+
+    &__list {
+        @include column;
+        padding: 24px 17px 24px;
+        gap: 11px;
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $dark;
+    }
+}
+
+
+@media (max-width: $maxWidthMobile) {
+
+    .filter {
+        &__text {
+          font-size: 0;
+          font-weight: 0;
+          line-height: 0;
+        }
+        &__svg {
+          width: 37px;
+          height: 25px;
+        }
+      }
+}

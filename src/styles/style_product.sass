@@ -1,0 +1,152 @@
+@import 'style'
+
+
+.slide
+    position: relative
+    width: 100vw
+    max-width: $maxWidth
+    height: auto
+    @include rowCenter
+    justify-content: center
+    background-color: #F7F7F7
+    border: 1px solid $colorBorder
+
+    &__nav
+        position: absolute
+        z-index: 1
+        width: 100vw
+        max-width: $maxWidth
+        height: auto
+        @include rowCenter
+        justify-content: space-between
+
+    &__image
+        margin-top: 11px
+        margin-bottom: 42px
+        max-width: 100%
+
+    &__button
+        width: 47px
+        height: 47px
+        background-color: $gray
+        opacity: 50%
+        @include rowCenter
+        justify-content: center
+        
+    &__svg
+        fill: $dark
+        transition: all 0.3s
+        
+    &__svg:hover
+        fill: $colorSite
+
+.product_description
+    width: 100vw
+    max-width: $maxWidthSecond
+    height: 600px
+    @include columnCenter
+    justify-content: space-evenly
+    padding-top: 65px
+    padding-bottom: 65px
+    border: 1px solid $colorBorder
+    margin-top: -65px
+    margin-bottom: 128px
+    background-color: white
+    
+    &__title_1
+        width: 148px
+        height: 17px
+        font-size: 14px
+        font-weight: 300
+        line-height: 17px
+        text-align: left
+        color: $colorSite
+
+    &__title_2 
+        width: 254px
+        height: 22px
+        font-size: 18px
+        font-weight: 300
+        line-height: 22px
+        text-align: left
+        color: $gray
+        padding-bottom: 48px
+
+    &__text
+        width: 550px
+        height: 52px
+        font-size: 14px
+        font-weight: 300
+        line-height: 17px
+        text-align: center
+        color: $gray
+
+    &__price
+        width: 56px
+        height: 30px
+        font-size: 24px
+        font-weight: 300
+        line-height: 29px
+        text-align: left
+        color: $colorSite
+        padding-bottom: 64px
+
+    &__sort
+        width: 373px
+        height: 17px
+        @include row
+        gap: 23px
+
+        &__group
+            @include row
+            gap: 8px
+
+            &__text
+                font-size: 14px
+                font-weight: 400
+                line-height: 17px
+                text-align: left
+                color: $gray
+
+    &__add
+        display: flex
+        position: relative
+        border: 1px solid $colorSite
+        color: $colorSite
+        width: 212px
+        height: 48px
+        text-align: left
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 19px
+        align-items: center
+        justify-content: center
+        gap: 40px
+         
+        &__svg
+            fill: $colorSite
+
+    &__add:hover
+        box-shadow: 0 0 5px $gray
+
+    datalist 
+    grid-column-start: 4
+    grid-column-end: 6
+
+summary
+    @include rowCenter
+    gap: 10px
+
+input
+    margin-right: 7px
+
+.sort
+    width: 100vw
+    max-width: $maxWidthSecond
+    margin-top: 51px
+    margin-bottom: 65px
+    @include rowCenter
+    justify-content: center
+    gap: 22px
+
