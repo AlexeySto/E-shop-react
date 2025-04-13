@@ -1,4 +1,4 @@
-import {featureItems} from "./../../data/featureItems"
+import {featureItems} from "./../../data/featureItems";
 import FeatureItem from "./FeatureItem";
 import "./styles/style.css";
 
